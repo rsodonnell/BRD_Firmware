@@ -1,0 +1,44 @@
+BRD mixer
+==================================================
+
+This file defines mixers suitable for controlling a fixed wing aircraft with
+left aileron, right aileron, elevator, throttle, left wing sweep, and right wing sweep.
+
+Inputs to the mixer come from channel group 0 (vehicle attitude), channels 0
+(roll), 1 (pitch), 2 (thrust)
+
+Outputs from the mixer are output 1 (left aileron), output 1 (right aileron), output 2 (elevator),
+output 3 (throttle), output 4 (left wing sweep), and output 5 (right wing sweep).
+
+CH1: Left aileron mixer
+-------------
+M: 1
+S: 0 0   10000   10000      0  -10000  10000
+
+CH2: Right aileron mixer
+-------------
+M: 1
+O:      -10000  -10000      0  -10000  10000
+S:  0  0      10000   10000     0     -10000  10000
+
+CH3: Elevator mixer
+------------
+M: 1
+O: -10000  -10000  0      -10000     10000
+S: 0 1  10000  10000      0  -10000  10000
+
+CH4: Motor speed mixer
+-----------------
+M: 1
+S: 0 3  0  20000  -10000  -10000  10000
+
+CH5: Variable sweep mixer (symmetric only)
+------------
+M: 1
+O: -10000  -10000  0      -10000     10000
+S: 3 5 10000  10000      0  -10000  10000
+
+CH6: Variable sweep mixer (symmetric only)
+------------
+M: 1
+S: 3 5   10000  10000      0  -10000  10000

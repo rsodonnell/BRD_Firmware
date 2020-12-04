@@ -48,6 +48,8 @@ px4_add_romfs_files(
 
 	2507_cloudship
 
+	2700_BRD
+
 	# [3000, 3999] Flying wing"
 	3000_generic_wing
 	3030_io_camflyer
