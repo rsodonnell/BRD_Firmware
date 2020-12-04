@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# @name BRD
+#
+# @type Standard Plane
+# @class Plane
+#
+# @output MAIN1 left aileron
+# @output MAIN2 right aileron
+# @output MAIN3 elevator
+# @output MAIN4 throttle
+# @output MAIN5 left wing sweep
+# @output MAIN6 right wing sweep
+#
+# @output AUX1 feed-through of RC AUX1 channel
+# @output AUX2 feed-through of RC AUX2 channel
+# @output AUX3 feed-through of RC AUX3 channel
+#
+# @maintainer Richard O'Donnell <r.s.odonnell@ufl.edu>
+#
+
+sh /etc/init.d/rc.fw_defaults
+
+if [ $AUTOCNF = yes ]
+then
+	param set COM_DISARM_PRFLT -1
+
+fi
+
+# Configure this as plane.
+set MAV_TYPE 1
+
+# Set mixer
+set MIXER BRD
+
+# Rate must be set by group (see pwm info).
+# Throttle is in the same group as servos.
